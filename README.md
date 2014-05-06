@@ -2,7 +2,6 @@
 
 C'est un fork de sheetsee.js + calendar développé par @jlord .
 
-![ss-cal](ss-cal.png)
 
 **Sheetsee.js Calendar**
 
