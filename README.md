@@ -1,14 +1,17 @@
-# Sheetsee Calendar
+# Le calendrier des événements autour du journalisme et des médias
 
-A fork-n-go Sheetsee.js calendar project!
+C'est un fork de sheetsee.js + calendar développé par @jlord .
 
-![ss-cal](ss-cal.png)
 
 **Sheetsee.js Calendar**
 
-Sheetsee.js is a library that makes it easy to visualze data from a Google Spreadsheet. This repository expands on that by building a calendar based on events in a spreadsheet.
+Sheetsee.js est une librairie qui permet d'extraire des données des documents google, en l'occurence ici des feuilles de calcul.
 
-**Fork-n-go**
+**Il est 'localisé' en français, vous pouvez le forker bien sûr !**
+
+Pas trop le temps de traduire les explications de Jessica là tout de suite, mais à savoir
+. mon repository n'est pas très clean parce qu'il fait appel à des css hébergées ailleurs, du coup  [https://newsresources.github.io/journalism-events-calendar/](cette url sur github est assez sale). 
+. la version hébergée est plus propre, elle est accessible ici -> http://www.newsresources.org/journalism-events-calendar/
 
 This repository contains webfiles on a branch named `gh-pages`, which means GitHub hosts them for free at: [jlord.github.io/sheetsee-calendar](jlord.github.io/sheetsee-calendar). When you fork the project to your account, you too can have a hosted site -- easy peasy!
 
