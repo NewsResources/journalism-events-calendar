@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <title>Calendrier des événements intéressants autour du journalisme et des médias - Newsresources</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Les événements en France, en Europe et dans le Monde qui font bouger le journalisme et les médias. Aux programmes : innovation, data, webdoc, photo, coding...">
+        <meta name="description" content="documents et base de donnees officielles diponibles sur internet pour trouver des chiffres, des nombres, sur les revenus, les populations, les ménages">
         <meta name="author" content="Cedric Motte Newsresources">
         
             <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic'>
@@ -15,12 +15,18 @@
     <script type="text/javascript" src='js/sheetsee.js'></script>
     <script type="text/javascript" src='js/table.js'></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/mapbox.css">
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link href="http://www.newsresources.org/wp-content/uploads/trouver_doc_officiels_internet/external/css/bootstrap.css" rel="stylesheet">
 
+        <link href="http://www.newsresources.org/wp-content/uploads/trouver_doc_officiels_internet/external/css/bootstrap.css" rel="stylesheet">
+        <link href="http://www.newsresources.org/wp-content/uploads/trouver_doc_officiels_internet/external/docs.css" rel="stylesheet">
+        <link href="http://www.newsresources.org/wp-content/uploads/trouver_doc_officiels_internet/css/can_i_haz.css" rel="stylesheet">
        
-<script type="text/javascript">var switchTo5x=true;</script>
+        <script src="http://www.newsresources.org/wp-content/uploads/trouver_doc_officiels_internet/css/can_i_haz.cssexternal/jquery.js"></script>
+        <script src="http://www.newsresources.org/wp-content/uploads/trouver_doc_officiels_internet/css/can_i_haz.cssexternal/bootstrap-affix.js"></script>
+        <script src="http://www.newsresources.org/wp-content/uploads/trouver_doc_officiels_internet/css/can_i_haz.cssexternal/bootstrap-collapse.js"></script>
+        <script src="http://www.newsresources.org/wp-content/uploads/trouver_doc_officiels_internet/css/can_i_haz.cssexternal/application.js"></script>
+        <script src="http://www.newsresources.org/wp-content/uploads/trouver_doc_officiels_internet/css/can_i_haz.cssexternal/waypoints/waypoints.js"></script>
+        <script src="http://www.newsresources.org/wp-content/uploads/trouver_doc_officiels_internet/css/can_i_haz.cssjs/can_i_haz.js"></script>
+ <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "e5c45791-f8fa-4676-87c1-aaed004e9372", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
@@ -75,53 +81,21 @@ alt="web stats"></a></div></noscript>
         ================================================== -->
         <header class="jumbotron subhead" id="overview">
             <div class="container">
-                <h1>Les bons événements autour du journalisme et des médias<br />placés sur une petite carte et un gros calendrier</h1>
+                <h1>Calendrier des événements intéressants autour du journalisme et des médias</h1>
 
             </div>
         </header>
-          <br /><small>Vous organisez ou avez repéré un événement qui a sa place sur cette page ? <a href="http://www.newsresources.org/comment-ajouter-un-evenement-au-calendrier-des-evenements-autour-du-journalisme-et-des-medias">Regardez comment faire</a> afin de l'ajoutez au <a href="https://docs.google.com/a/github.com/spreadsheet/ccc?key=1IBTEzaFylx8mDar4IZaRjKWE6ZigLH2k4NWZXRcC78w#gid=0&output=json" target="_blank">tableur partagé</a>.</small><br />
- <div id="map"></div>
+
         <div class="container">
 
   <div id="calendar-goes-here"></div>
-<span class='st_twitter_hcount' displayText='Tweet'></span>
-<span class='st_googleplus_hcount' displayText='Google +'></span>
-<span class='st_facebook_hcount' displayText='Facebook'></span>
-<span class='st_linkedin_hcount' displayText='LinkedIn'></span>
-<span class='st_pinterest_hcount' displayText='Pinterest'></span>
-<span class='st_email_hcount' displayText='Email'></span>
-
- <small>Visit the GitHub <a href="http://www.github.com/jlord/sheetsee-calendar">repository</a>.</small>
+  <small>Ajoutez des événements à ce <a href="https://docs.google.com/a/github.com/spreadsheet/ccc?key=1IBTEzaFylx8mDar4IZaRjKWE6ZigLH2k4NWZXRcC78w#gid=0&output=json" target="_blank">tableur partagé</a>. Visit the GitHub <a href="http://www.github.com/jlord/sheetsee-calendar">repository</a>.</small>
 
   </body>
-  <script type="text/javascript">
+    <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
       var URL = "1IBTEzaFylx8mDar4IZaRjKWE6ZigLH2k4NWZXRcC78w"
-      Tabletop.init( { key: URL, callback: makeThings, simpleSheet: true } )
-
-      function makeThings(data) {
-        // build the calendar
-        generateCalendar(data)
-        // add hexcolor to color map markers
-        data = addHexcolor(data, "#ccf4ff")
-        // make map
-        var optionsJSON = ["name", "tickets", "startdate"]
-        var template = "<p>{{startdate}} <a href='{{tickets}}'"
-          + " target='_blank'>{{name}}</a><p>"
-        var geoJSON = Sheetsee.createGeoJSON(data, optionsJSON)
-        var map = Sheetsee.loadMap("map")
-        Sheetsee.addTileLayer(map, 'examples.map-i86nkdio')
-        var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, template)
-      }
+      Tabletop.init( { key: URL, callback: generateCalendar, simpleSheet: true } )
     })
-
-    function addHexcolor(data, color) {
-      data.forEach(function(row) {
-        row.hexcolor = color
-      })
-      return data
-    }
-
   </script>
-
 </html>
